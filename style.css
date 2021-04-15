@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+:root{
+    
+--Prm-Red: hsl(0, 100%, 74%);
+--Prm-Green: hsl(154, 59%, 51%);
+
+--Act-Blue: hsl(248, 32%, 49%);
+
+--Net-Dark-Blue: hsl(249, 10%, 26%); 
+--Net-Grayish-Blue: hsl(246, 25%, 77%);
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ 
+body{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.input-component{
+    width: 100%;
+    height: 100vh;
+    background: url(./images/bg-intro-desktop.png), linear-gradient(to right , var(--Prm-Red), var(--Prm-Green));
+}
+
+.input-component .container{
+    width: 100%;
+    height: 100%;
+    padding: 30px 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-side{
+    width: 49%;
+}
+.left-side h1{
+    color: #f7f1f1;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+}
+.left-side p{
+    color: var(--Net-Grayish-Blue);
+    font-weight: 400;
+    line-height: 1.4;
+    padding: 25px 50px 15px 0;
+}
+
+
+/* ================= right-side ============ */
+.right-side{
+    width: 49%;
+    max-width: 450px;
+}
+
+.form-title{
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    background: var(--Act-Blue);
+    border-radius: 10px;
+    box-shadow: 0px 5px 2px var(--Prm-Red);
+    margin-bottom: 15px;
+    color: #f7f1f1;
+    font-weight: 600;
+}
+
+.form-title span{
+    color: var(--Net-Grayish-Blue);
+    margin-left: 5px;
+    font-weight: 400;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 2px var(--Prm-Red);
+}
+
+form .input-box{
+    margin-bottom: 15px;
+    border-radius: 3px;
+    border: 1px solid var(--Net-Grayish-Blue);
+    color: var(--Net-Dark-Blue);
+}
+form input{
+    padding: 10px 15px;
+    border-radius: 3px;
+    width: 100%;
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+/* form input:focus{
+    border: 1px solid var(--Net-Dark-Blue);
+    font-weight: 600;
+} */
+
+form input[type='submit']{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: 0 3px 2px 0px var(--Prm-Red);
+    background: var(--Prm-Green);
+    color: #f7f1f1;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+form .err{
+    display: none;
+}
+
+form .input-box.invalid{
+    margin-bottom: 2px;
+    position: relative;
+}
+
+form .input-box.invalid + .err{
+    display: block;
+    align-self: flex-end;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--Prm-Red);
+}
+
+form .input-box.invalid::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 90%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url(./images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+form .note{
+    color: var(--Net-Grayish-Blue);
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+form .note span{
+    color: var(--Net-Dark-Blue);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =============Media-Query============ */
+
+@media screen and (max-width: 992px){
+    .input-component .container{
+        padding: 30px 70px;
+    }
+}
+@media screen and (max-width: 830px){
+    .input-component .container{
+        padding: 30px 40px;
+    }
+    .left-side p{
+        padding: 25px 0;
+        text-align: left;
+    }
+}
+@media screen and (max-width: 768px){
+    .input-component .container{
+        padding: 30px 20px;
+    }
+}
+@media screen and (max-width: 524px){
+    .input-component{
+        height: auto;
+        background: url(./images/bg-intro-mobile.png), linear-gradient(to right , var(--Prm-Red), var(--Prm-Green));
+    }
+    .input-component .container{
+        flex-direction: column;
+    }
+
+    .left-side{
+        width: 100%;
+        text-align: center;
+    }
+    .left-side h1{
+        font-size: 32px;
+    }
+    .left-side p{
+        text-align: center;
+        color: #f7f1f1;
+        padding: 20px 0 25px;
+    }
+
+    .right-side{
+        width: 100%;
+        max-width: 450px;
+    }
+    
+    .form-title{
+        padding: 12px 70px;
+    }
+}
